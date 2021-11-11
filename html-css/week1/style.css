@@ -73,10 +73,6 @@ body{
     padding-bottom: 20px;
     border-bottom: 1px solid #AFE6E4;
 }
-.hyf-info{
-    padding-bottom: 40px;
-    border-bottom: 3px solid #AFE6E4;
-}
 
 .title{
     letter-spacing: 1px;
@@ -129,6 +125,11 @@ body{
 .reference-info ul li a:hover{
     color: #AFE6E4;
     text-decoration: underline;
+}
+
+.hyf-info{
+    padding-bottom: 40px;
+    border-bottom: 3px solid #AFE6E4;
 }
 
 .hyf-info ul li a{
@@ -199,4 +200,11 @@ body{
     letter-spacing: 1px;
     font-family: 300;
     color: #023e8a;
+}
+
+@media (max-width: 1000px){
+    .resume-content{
+        margin: 10px;
+        grid-template-columns: repeat(1,1fr);
+    }
 }
