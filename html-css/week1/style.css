@@ -191,15 +191,18 @@ body{
     letter-spacing: 1px;
 }
 
-.experience h5{
+.experience .data, .education .data{
+    font-size: 14px;
     letter-spacing: 1px;
     font-family: 300;
     color: #023e8a;
 }
-.education h5{
+
+.experience ul li p, .education ul li p{
+    color: #03045e;
+    font-size: 18px;
     letter-spacing: 1px;
     font-family: 300;
-    color: #023e8a;
 }
 
 @media (max-width: 1000px){
