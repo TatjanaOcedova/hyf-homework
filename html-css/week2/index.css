@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.title{
+    background-color: #eff3f3;
+    padding: 40px 60px;
+}
+.title h1{
+    text-transform: uppercase;
+}
+.title p{
+    color: #a3a1a1;
+    font-size: 18px;
+}
+header nav ul{
+    font-size: 18px;
+    padding: 20px 50px;
+    max-width: 100%;
+    display: flex;
+    outline: rgb(230, 229, 229) solid 1px;
+}
+.box{
+    padding: 10px;
+}
+.box a{
+    text-decoration: none;
+    outline: none;
+    color: #000;
+}
+a.active, a:hover{
+    color: #a3a1a1;
+}
+main figure img{
+    width: 100%;
+    
+}
+.logo-icon img{
+    width: 80%;   
+}
+.card{
+    max-width: 1200px;
+    padding: 40px 60px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 50px; 
+    justify-content: center; 
+}
+.card h2, .card h3{
+    display: flexbox;
+    height: 45px;
+    text-transform: uppercase;
+}
+.card p{
+    font-size: 16px;
+    color: #a3a1a1;
+    padding: 10px 0 20px 0;
+    
+}
+.logo-icon ul li{
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+.container{
+    padding: 40px 60px;
+    background-color: #6930C3;
+    color: white;
+}
+.container .row{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.container .row .box h3{
+    text-transform: uppercase;
+    padding-bottom: 20px;
+}
+.container .row ul li{
+    padding: 10px 0px;
+}
+.container .row .box ul li a{
+    outline: none;
+    text-decoration: none;
+    color: white;
+}
+hr{
+    border: 0.5px solid #774bbe;
+}
+
+
+@media (max-width: 600px){
+    header .title h1{
+        font-size: 22px;
+    }
+    header nav ul, .container .row{
+        flex-direction: column;
+    }
+    .card{
+        grid-template-columns: auto;
+        grid-template-areas: "p" "w" "g" "l";
+    }
+    .card h2, .card h3{
+        height: 30px;
+    }
+    .prac-dev{
+        grid-area: p;
+    }
+    .web-dev{
+        grid-area: w;
+    }
+    .galery{
+        grid-area: g;
+    }
+    .logo{
+        grid-area: l;
+    }
+   
+   
+}
