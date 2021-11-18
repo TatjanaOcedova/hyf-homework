@@ -51,6 +51,7 @@ main figure img{
     display: flexbox;
     height: 45px;
     text-transform: uppercase;
+    padding-bottom: 10px;
 }
 .card p{
     font-size: 16px;
@@ -89,8 +90,9 @@ main figure img{
 hr{
     border: 0.5px solid #774bbe;
 }
-
-
+.box iframe{
+    width: 100%;
+}
 @media (max-width: 600px){
     header .title h1{
         font-size: 22px;
@@ -104,6 +106,7 @@ hr{
     }
     .card h2, .card h3{
         height: 30px;
+        font-size: 18px;
     }
     .prac-dev{
         grid-area: p;
@@ -117,6 +120,7 @@ hr{
     .logo{
         grid-area: l;
     }
-   
-   
+    .box h3{
+        font-size: 16px;
+    }
 }
