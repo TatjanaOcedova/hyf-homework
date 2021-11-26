@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yourcustomtailor step 1/4</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <header>
+        <div>
+            <img src="logo.png" alt="logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="sign-up">
+            <h1>Sign up to yourcustomtailor.com</h1>
+        </section>
+        <section class="step">
+            <h2>Step 2/4 - how can we reach you?</h2>
+            <p><strong>Progress</strong></p>
+            <div class="progress-bar">
+                <div class="progress-2"></div>
+            </div>
+            <p>We will probably need to stay in toucg somehow. Let us know how we can reach you?</p>
+        </section>
+        <section class="container">
+            <form action="https://bit.ly/3cSOdzu">
+                <div class="contact">
+                    <div class="email">
+                        <label for="email"><strong>Email*</strong></label>
+                        <input type="email" name="email" id="email" required>
+                    </div>
+                    <div class="phone">
+                        <label for="tel"><strong>Phone</strong></label>
+                        <input type="tel" name="tel" id="tel" pattern="[0-9]*">
+                    </div>
+                </div>
+                <div class="password">
+                    <label for="password"><strong>Password*</strong>
+                        <input type="password" name="password" id="password"
+                            pattern="^(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" minlength="10" required>
+                    </label>
+                    <label for="re-password"><strong>Re-enter password*</strong>
+                        <input type="password" name="re-password" id="re-password"
+                            pattern="^(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" minlength="10" required>
+                    </label>
+                </div>
+
+                <section class="newsletter">
+                    <p>I want to sign-up for the newsletter</p>
+                    <div class="news">
+                        <label for="newsletter"><strong>Weekly news</strong>
+                            <input type="radio" name="newsletter" value="weekly" checked>
+                        </label>
+                        <label for="newsletter"><strong>Monthly news</strong>
+                            <input type="radio" name="newsletter" value="monthly">
+                        </label>
+                        <label for="newsletter"><strong>Don't send me news</strong>
+                            <input type="radio" name="newsletter" value="don't">
+                        </label>
+                    </div>
+                    
+                        <button class="button" type="submit" style="float: right;"><strong>Next step</strong></button>
+                    
+                </section>
+            </form>
+
+        </section>
+    </main>
+
+</body>
+
+</html>

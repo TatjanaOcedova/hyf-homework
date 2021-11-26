@@ -1,0 +1,266 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+header{
+    background-color: #83c5be;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+}
+header img{
+    width: 50%;
+}
+nav ul{
+    display: flex;
+}
+header ul li a{
+    color: black;
+    padding: 20px;
+}
+
+.sign-up, .step, .container, .news{
+    padding: 20px 40px;
+}
+.sign-up h1{
+    font-size: 40px;
+}
+.step h2{
+    font-size: 30px;
+}
+.sign-up p, .step p, .newsletter p{
+    font-size: 18px;
+    padding-top: 1em;
+}
+.step .progress-bar{
+    background-color: white;
+    width: 100%;
+    outline: 1px solid #32aa90;
+}
+.progress{
+    background-color: #b8f2e6;
+    outline: 1px solid #32aa90;
+    padding: 1%;
+    text-align: right;
+    height: 40px;
+    width: 25%;
+}
+.progress-2{
+    background-color: #b8f2e6;
+    outline: 1px solid #32aa90;
+    padding: 1%;
+    text-align: right;
+    height: 40px;
+    width: 50%;
+}
+.progress3{
+    background-color: #b8f2e6;
+    outline: 1px solid #32aa90;
+    padding: 1%;
+    text-align: right;
+    height: 40px;
+    width: 75%;
+}
+
+.name, .location, .contact{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 1em;
+}
+
+.password{
+    display: flex;
+    flex-direction: column;
+    padding: 0 1em;
+}
+.password input{
+    width: 25%;
+    border: none;
+    outline: 1px solid #32aa90;
+}
+#password{
+    margin-left: 4.7em;
+}
+#email{
+    margin-left: 6.5em;
+}
+.password label{
+    padding-bottom: 1em;
+}
+.first-name input, .last-name input, .street input, .post-code input, .phone input, .email input{
+    width: 50%;
+    margin-left: 1em;
+    border: none;
+    outline: 1px solid #32aa90;
+}
+.first-name input{
+    margin-left: 2.5em;
+}
+.country{
+    padding: 1em;
+}
+.country select{
+    margin-left: 3.9em;
+    width: 25%;
+    border: none;
+    outline: 1px solid #32aa90;
+}
+input{
+    height: 25px;
+    padding-left: 10px;
+}
+select{
+    height: 30px;
+}
+.description{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 5px;
+    padding-top: 50px;
+}
+.description .text textarea{
+    width: 73%;
+    height: 100px;
+    resize: none;
+    border: none;
+    outline: 1px solid #32aa90;
+}
+.description .info{
+    padding: 1em;
+}
+.description .info label, .description .info p{
+    padding-top: 1em;
+}
+
+.shipp-info, .newsletter{
+    font-size: 18px;
+    padding: 20px;
+}
+.shippment, .shippment label{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+}
+button{
+    padding: 20px;
+    background-color: #b8f2e6;
+    border: #83c5be;
+    border-radius: 25px;
+}
+button:hover{
+    background-color: #42968d;
+    color: white;
+}
+.newsletter button, .items button{
+    margin: 100px;
+}
+.news, .news label{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.news{
+    width: 70%;
+}
+.shippment input, .news input{
+    margin-left: 0.5em;
+}
+.interested{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: flex-end;
+    width: 65%;
+    margin: 20px 40px;
+}
+.interested label{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5em;
+}
+.interested input{
+    margin-left: 1em;
+}
+.style img{
+    width: 70%;
+}
+.style{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
+    padding: 20px 0;
+    width: 70%;
+}
+.style label{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+@media (max-width: 768px){
+    .sign-up h1{
+        font-size: 30px;
+    }
+    .step h2{
+        font-size: 25px;
+    }
+    .name, .location, .description, .contact, .password, .shippment{
+        display: flex;
+        flex-direction: column;
+        padding: 0.5em;
+    }
+    .first-name, .last-name, .street, .post-code, .description .info, .email, .phone{
+        padding: 0.5em 0;
+    }
+    .country{
+        padding: 0.5em;
+    }
+    .country select{
+        width: 50%;
+    }
+    .first-name input{
+        margin-left: 2.7em;
+    }
+    .last-name input{
+        margin-left: 2.9em;
+    }
+    .post-code input{
+        margin-left: 3.5em;
+    }
+    .description .text textarea{
+        width: 100%;
+    }
+    .email input, .phone input, #password, #re-password{
+        width: 45%;
+    }
+    #re-password{
+        margin-left: 1em;
+    }
+    #password{
+        margin-left: 5.6em;
+    }
+    .phone input{
+        margin-left: 8em;
+    }
+    #email{
+        margin-left: 7.5em;
+    }
+    .news{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .style{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 20px 0;
+    }
+}
