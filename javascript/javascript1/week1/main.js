@@ -9,7 +9,7 @@ const dogYearOfBirth = 2017;
 let dogYearFuture = 2027;
 let humanYear = dogYearFuture - dogYearOfBirth;
 let dogYear = humanYear * 7;
-let shouldShowResultInDogYears = true;
+let shouldShowResultInDogYears = false;
 if (shouldShowResultInDogYears === true) {
   console.log(
     "Your dog will be " +
@@ -74,4 +74,11 @@ const startupName =
   firstWords[Math.floor(Math.random() * 10)] +
   secondWords[Math.floor(Math.random() * 10)];
 
-console.log("The startup: " + startupName + "!");
+console.log(
+  "The startup: " +
+    startupName +
+    " contains " +
+    startupName.length +
+    " characters" +
+    "!"
+);
