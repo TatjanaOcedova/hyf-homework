@@ -28,6 +28,27 @@ console.log(fullname1);
 console.log(fullname2);
 
 //Event application
+const weekday = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+function getEventWeekday(daysLeft) {
+  const todaysDate = new Date();
+  const eventDate = new Date(
+    todaysDate.getFullYear(),
+    todaysDate.getMonth(),
+    todaysDate.getDate() + daysLeft
+  );
+  return weekday[eventDate.getDay()];
+}
+
+console.log(getEventWeekday(9));
+console.log(getEventWeekday(2));
 
 //Weather wear
 function weatherTemperature(celsius) {
