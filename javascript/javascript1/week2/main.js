@@ -45,5 +45,41 @@ const clothsToWear = weatherTemperature(45);
 console.log(clothsToWear);
 
 //Student manager
+const class07Students = [];
+function addStudentToClass(studentName) {
+  // You write code here
+  if (studentName == "") {
+    return "Please add a name";
+  } else if (studentName == "Queen") {
+    return class07Students.push(studentName);
+  } else if (class07Students.length > 6) {
+    return "Cannot add more students to class 07";
+  } else if (class07Students.includes(studentName)) {
+    return "Student " + studentName + " is already in the class.";
+  } else {
+    return class07Students.push(studentName);
+  }
+}
+
+function getNumberOfStudents() {
+  // You write code here
+  return class07Students.length;
+}
+addStudentToClass("");
+addStudentToClass("Ed");
+addStudentToClass("Queen");
+addStudentToClass("Mira");
+addStudentToClass("Ben");
+addStudentToClass("John");
+addStudentToClass("Sara");
+addStudentToClass("Ed");
+addStudentToClass("Emma");
+addStudentToClass("Barbara");
+addStudentToClass("Ben");
+addStudentToClass("Bruno");
+addStudentToClass("Queen");
+
+console.log(class07Students);
+console.log(getNumberOfStudents());
 
 //Candy helper
