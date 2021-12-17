@@ -30,6 +30,19 @@ console.log(fullname2);
 //Event application
 
 //Weather wear
+function weatherTemperature(celsius) {
+  if (celsius <= 5) {
+    return "warm cloths, jacket and boots";
+  } else if (celsius <= 15) {
+    return "raincoat and sneakers";
+  } else if (celsius <= 25) {
+    return "t-shirt, jeans and sandals";
+  } else {
+    return "beach wear";
+  }
+}
+const clothsToWear = weatherTemperature(45);
+console.log(clothsToWear);
 
 //Student manager
 
