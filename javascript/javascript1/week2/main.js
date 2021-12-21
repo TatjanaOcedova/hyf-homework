@@ -71,12 +71,12 @@ function addStudentToClass(studentName) {
   // You write code here
   if (studentName == "") {
     return "Please add a name";
+  } else if (class07Students.includes(studentName)) {
+    return "Student " + studentName + " is already in the class.";
   } else if (studentName == "Queen") {
     return class07Students.push(studentName);
   } else if (class07Students.length > 6) {
     return "Cannot add more students to class 07";
-  } else if (class07Students.includes(studentName)) {
-    return "Student " + studentName + " is already in the class.";
   } else {
     return class07Students.push(studentName);
   }
