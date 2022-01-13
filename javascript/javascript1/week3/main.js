@@ -62,11 +62,27 @@ const seriesDurations = [
   },
 ];
 
+let lifespan = 80 * 365 * 24 * 60;
+
 function logOutSeriesText() {
   // write code here
+  for (let i = 0; i < seriesDurations.length; i++) {
+    let duration =
+      ((seriesDurations[i].days * 24 * 60 +
+        seriesDurations[i].hours * 60 +
+        seriesDurations[i].minutes) /
+        lifespan) *
+      100;
+    console.log(
+      seriesDurations[i].title +
+        " took " +
+        duration.toFixed(seriesDurations.length) +
+        "% of my life."
+    );
+  }
 }
 
-logOutSeriesText(); // logs out the text found above
+logOutSeriesText(seriesDurations); // logs out the text found above
 
 //NOnoN0nOYes (Note taking app)
 const notes = [];
