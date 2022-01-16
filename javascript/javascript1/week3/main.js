@@ -63,6 +63,7 @@ const seriesDurations = [
 ];
 
 let lifespan = 80 * 365 * 24 * 60;
+let durationTotal = 0;
 
 function logOutSeriesText() {
   // write code here
@@ -73,13 +74,17 @@ function logOutSeriesText() {
         seriesDurations[i].minutes) /
         lifespan) *
       100;
+
     console.log(
       seriesDurations[i].title +
         " took " +
         duration.toFixed(seriesDurations.length) +
         "% of my life."
     );
+
+    durationTotal += Number(duration.toFixed(seriesDurations.length));
   }
+  console.log("In total that is " + durationTotal + "% of my life.");
 }
 
 logOutSeriesText(seriesDurations); // logs out the text found above
@@ -120,11 +125,11 @@ console.log(firstNote); // {content: 'Pick up groceries', id: 1}
 function logOutNotesFormatted() {
   // your code here
   for (let i = 0; i < notes.length; i++) {
-    return (
+    console.log(
       "The note with id: " +
-      notes[i].id +
-      " , has the following note text: " +
-      notes[i].content
+        notes[i].id +
+        " , has the following note text: " +
+        notes[i].content
     );
   }
 }
