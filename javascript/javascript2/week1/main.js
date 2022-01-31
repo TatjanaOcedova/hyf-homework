@@ -15,7 +15,7 @@ function find(str) {
     if (danishLetters.includes(str[i])) {
       letters.total = letters.total + 1;
       if (letters.hasOwnProperty(str[i])) {
-        letters[str[i]] = letters[str[i]] + 1;
+        letters[str[i]] = letters[str[i]] += 1;
       } else {
         letters[str[i]] = 1;
       }
