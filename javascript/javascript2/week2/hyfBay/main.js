@@ -7,9 +7,11 @@ let ul = document.querySelector(".list");
 
 function renderProducts(products) {
   ul.innerHTML = "";
-
-  for (let i = 0; i < products.length; i++) {
-    let product = products[i];
+  products.forEach((product) => {
+    //function renderProducts(products) {
+    //ul.innerHTML = "";
+    //for (let i = 0; i < products.length; i++) {
+    // product = products[i];
     let productTitle = document.createElement("h2");
     let productPrice = document.createElement("p");
     let productRating = document.createElement("p");
@@ -23,7 +25,8 @@ function renderProducts(products) {
     productList.appendChild(productPrice);
     productList.appendChild(productRating);
     ul.appendChild(productList);
-  }
+    // }
+  });
 }
 
 renderProducts(products); // This should create the ul and the li's with the individual products details
