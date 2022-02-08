@@ -11,6 +11,7 @@ console.log("The doubled numbers are", newNumbers); // [2, 6]
 */
 
 let numbers = [1, 2, 3, 4];
-const newNumbers = numbers.filter((number) => number % 2 === 1);
-const doubleNumbers = newNumbers.map((newNumber) => newNumber * 2);
+const doubleNumbers = numbers
+  .filter((number) => number % 2 === 1)
+  .map((newNumber) => newNumber * 2);
 console.log("The doubled numbers are", doubleNumbers);
