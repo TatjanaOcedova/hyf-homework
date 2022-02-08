@@ -8,8 +8,6 @@ let ul = document.querySelector(".list");
 function renderProducts(products) {
   ul.innerHTML = "";
   products.forEach((product) => {
-    //function renderProducts(products) {
-    //ul.innerHTML = "";
     //for (let i = 0; i < products.length; i++) {
     // product = products[i];
     let productTitle = document.createElement("h2");
