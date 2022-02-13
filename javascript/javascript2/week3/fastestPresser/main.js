@@ -79,6 +79,7 @@ const confettiSettingsL = { target: "my-canvas-l", size: 2 };
 const confettiL = new ConfettiGenerator(confettiSettingsL);
 
 //resetButton
+//when the same player wins second time confetti element is not working
 const resetButton = document.getElementById("resetButton");
 
 resetButton.addEventListener("click", () => {
@@ -95,4 +96,6 @@ resetButton.addEventListener("click", () => {
   displayL.innerText = "";
   inputTime.value = "";
   gameTimer.innerText = "";
+  // confettiS.clear();
+  // confettiL.clear();
 });
