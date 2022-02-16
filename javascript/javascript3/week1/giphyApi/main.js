@@ -17,11 +17,14 @@ buttonSearch.addEventListener("click", () => {
     )
       .then((response) => response.json())
       .then((obj) => {
-        //console.log(obj);
+        console.log(obj);
         obj.data.forEach((element) => {
+          let imgBox = document.createElement("div");
+          imgBox.innerHTML = "";
+          imgGif.appendChild(imgBox);
           let imgGif1 = document.createElement("img");
-          imgGif1.src = element.images.fixed_height.webp;
-          imgGif.appendChild(imgGif1);
+          imgGif1.src = element.images.fixed_width.url;
+          imgBox.appendChild(imgGif1);
         });
       });
   }
