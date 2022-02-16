@@ -8,21 +8,29 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="displayInfo">
+      <p id="todaysRep">Today's Weather Report</p>
+      <p id="message"></p>
+      <p id="cityoutput"></p>
+      <div class="displayTempIcon">
+        <p id="temp"></p>
+        <img src="" id="icon" alt="iconWeather" />
+      </div>
+      <div class="windCloudSun">
+        <p id="wind"></p>
+        <p id="clouds"></p>
+        <p id="sunrise"></p>
+        <p id="sunset"></p>
+      </div>
+
+      <!-- try many time how to display the map but without success -->
+      <!-- <span id="map"></span> -->
+    </div>
     <div class="inputInfo">
       <input type="text" id="inputField" placeholder="Write a city..." />
       <button id="button">SUBMIT</button>
       <button id="buttonLocation">Current Position</button>
-      <p id="message"></p>
-    </div>
-
-    <div class="displayInfo">
-      <h2 id="cityoutput"></h2>
-      <p id="temp"></p>
-      <img src="" id="icon" alt="iconWeather" />
-      <p id="wind"></p>
-      <p id="clouds"></p>
-      <p id="sunrise and sunset"></p>
-      <span id="map"></span>
+      <button id="saveLocal">Save Location</button>
     </div>
 
     <script src="main.js"></script>

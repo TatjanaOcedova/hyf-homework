@@ -1,12 +1,14 @@
 const inputCity = document.getElementById("inputField");
 const buttonSearchCity = document.getElementById("button");
-var city = document.querySelector("#cityoutput");
-var temp = document.querySelector("#temp");
-var LocationIcon = document.querySelector("#icon");
+
+var city = document.getElementById("cityoutput");
+var temp = document.getElementById("temp");
+var LocationIcon = document.getElementById("icon");
 let iconWeather = document.getElementById("icon");
-var wind = document.querySelector("#wind");
+var wind = document.getElementById("wind");
 let clouds = document.getElementById("clouds");
-let sunRiseAndSunSet = document.getElementById("sunrise and sunset");
+let sunRise = document.getElementById("sunrise");
+let sunSet = document.getElementById("sunset");
 let map = document.getElementById("map");
 
 buttonSearchCity.addEventListener("click", (e) => {
@@ -16,6 +18,7 @@ buttonSearchCity.addEventListener("click", (e) => {
   if (inputCity.value == "") {
     inputVal.innerHTML = "Please search for a valid city";
   } else {
+    inputVal.innerHTML = "";
     fetch(
       "https://api.openweathermap.org/data/2.5/weather?q=copenhagen&appid=e64c5025eb778680cc166c7ba9b42654"
     )
@@ -24,12 +27,11 @@ buttonSearchCity.addEventListener("click", (e) => {
         console.log(data);
 
         //The chosen city
-        city.innerHTML = `Weather of ${data.name}`;
+        // city.innerHTML = `Weather of ${data.name}`;
+        city.innerHTML = data.name;
 
         // Temperature
-        temp.innerHTML = `The temperature is ${Math.round(
-          data.main.temp - 273.15
-        )}°C`;
+        temp.innerHTML = `${Math.round(data.main.temp - 273.15)}°`;
 
         // Icon for the weather type
         let icon = data.weather[0].icon;
@@ -39,23 +41,26 @@ buttonSearchCity.addEventListener("click", (e) => {
         );
 
         //Wind speed
-        wind.innerHTML = `The wind speed is ${data.wind.speed}meter/sec`;
+        wind.innerHTML = `Wind ${data.wind.speed}m/s`;
 
         // How clowdy it is
-        clouds.innerHTML = `It is ${data.clouds.all}% cloudy`;
+        // let iconCloud = document.createElement("img");
+        // iconCloud.src = "https://i.imgur.com/NjSawWx.png";
+        // clouds.appendChild(iconCloud);
+        clouds.innerHTML = `Cloudy ${data.clouds.all}%`;
 
         // When sunrise
         let riseTime = new Date(data.sys.sunrise * 1000);
         let riseHours = riseTime.getHours();
         let riseMinutes = riseTime.getMinutes();
         //let seconds = rise.getSeconds();
-
+        sunRise.innerHTML = `Sunrise ${riseHours}:${riseMinutes}`;
         // When sunset
         let setTime = new Date(data.sys.sunset * 1000);
         let setHours = setTime.getHours();
         let setMinutes = setTime.getMinutes();
         //let seconds = set.getSeconds();
-        sunRiseAndSunSet.innerHTML = `Sunrise Today: ${riseHours}:${riseMinutes} and Sunset Today: ${setHours}:${setMinutes}`;
+        sunSet.innerHTML = `Sunset ${setHours}:${setMinutes}`;
         // Optional a map showing where the city is located
       });
   }
@@ -71,11 +76,7 @@ getLocation.addEventListener("click", (e) => {
         let longi = position.coords.longitude;
         let showLocation = document.getElementById("message");
         showLocation.innerHTML =
-          "This is the latitude: " +
-          latit +
-          "<br />" +
-          "This is the longitude: " +
-          longi;
+          "Latitude: " + latit + "<br />" + "Longitude: " + longi;
         fetch(
           `https://api.openweathermap.org/data/2.5/onecall?lat=${latit}&lon=${longi}&appid=e64c5025eb778680cc166c7ba9b42654`
         )
@@ -84,9 +85,7 @@ getLocation.addEventListener("click", (e) => {
             console.log(data);
 
             // Temperature
-            temp.innerHTML = `The temperature is ${Math.round(
-              data.current.temp - 273.15
-            )}°C`;
+            temp.innerHTML = `${Math.round(data.current.temp - 273.15)}°`;
 
             // // Icon for the weather type
             let icon = data.current.weather[0].icon;
@@ -96,23 +95,28 @@ getLocation.addEventListener("click", (e) => {
             );
 
             //Wind speed
-            wind.innerHTML = `The wind speed is ${data.current.wind_speed}meter/sec`;
+            wind.innerHTML = `Wind ${data.current.wind_speed}m/s`;
 
             // How clowdy it is
-            clouds.innerHTML = `It is ${data.current.clouds}% cloudy`;
+            //I try to add icon but can't display
+            //<i class="fas fa-cloud" aria-hidden="true"></i>
+            // const iconCloud = document.createElement("i");
+            // iconCloud.setAttribute("class", "fas fa-cloud");
+            // document.body.appendChild(iconCloud);
+            clouds.innerHTML = `Cloudy ${data.current.clouds}%`;
 
             // When sunrise
             let riseTime = new Date(data.current.sunrise * 1000);
             let riseHours = riseTime.getHours();
             let riseMinutes = riseTime.getMinutes();
             //let seconds = rise.getSeconds();
-
+            sunRise.innerHTML = `Sunrise ${riseHours}:${riseMinutes}`;
             // When sunset
             let setTime = new Date(data.current.sunset * 1000);
             let setHours = setTime.getHours();
             let setMinutes = setTime.getMinutes();
             //let seconds = set.getSeconds();
-            sunRiseAndSunSet.innerHTML = `Sunrise Today: ${riseHours}:${riseMinutes} and Sunset Today: ${setHours}:${setMinutes}`;
+            sunSet.innerHTML = `Sunset ${setHours}:${setMinutes}`;
 
             // Optional a map showing where the city is located;
           });

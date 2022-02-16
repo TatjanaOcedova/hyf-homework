@@ -1,3 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url("https://cdn.pixabay.com/photo/2021/01/11/08/53/sky-5907605_1280.jpg");
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.displayInfo,
+.inputInfo {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 40px;
+}
+.displayInfo #todaysRep {
+  font-size: 40px;
+  margin: 55px 100px;
+  align-self: flex-start;
+  text-align: center;
+}
+.displayInfo #cityoutput,
+.displayInfo #message {
+  font-size: 30px;
+  margin: 20px;
+}
+
+.displayTempIcon {
+  display: flex;
+  flex-direction: row;
+}
+
+.windCloudSun {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.windCloudSun p {
+  padding: 20px;
+}
+
+.displayTempIcon #icon {
+  height: 100px;
+}
+.displayTempIcon #temp {
+  font-size: 180px;
+}
 img[src=""] {
   display: none;
+}
+.inputInfo button {
+  padding: 10px;
+  margin: 10px;
+  border: #83c5be;
+  border-radius: 5px;
+  background-color: #78c0e0;
+}
+
+.inputInfo button:hover {
+  background-color: #609bd2;
+  color: white;
+}
+.inputInfo input {
+  border-radius: 5px;
+  margin: 20px 0;
+  border: 0;
+  border: none;
+  outline-color: #78c0e0;
+  padding: 10px;
+  box-shadow: 0 6px 15px 2px rgb(206, 201, 201);
 }
