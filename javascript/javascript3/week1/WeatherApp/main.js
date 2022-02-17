@@ -11,14 +11,25 @@ let sunRise = document.getElementById("sunrise");
 let sunSet = document.getElementById("sunset");
 let map = document.getElementById("map");
 
-buttonSearchCity.addEventListener("click", (e) => {
-  e.preventDefault;
+function resetSearch() {
+  city.innerHTML = "";
+  temp.innerHTML = "";
+  iconWeather.src = "";
+  wind.innerHTML = "";
+  clouds.innerHTML = "";
+  sunRise.innerHTML = "";
+  sunSet.innerHTML = "";
+}
+
+buttonSearchCity.addEventListener("click", () => {
   let inputVal = document.getElementById("message");
   inputVal.innerHTML = inputCity.value;
+  resetSearch();
   if (inputCity.value == "") {
     inputVal.innerHTML = "Please search for a valid city";
   } else {
     inputVal.innerHTML = "";
+    inputCity.value = "";
     fetch(
       "https://api.openweathermap.org/data/2.5/weather?q=copenhagen&appid=e64c5025eb778680cc166c7ba9b42654"
     )
@@ -26,8 +37,7 @@ buttonSearchCity.addEventListener("click", (e) => {
       .then((data) => {
         console.log(data);
 
-        //The chosen city
-        // city.innerHTML = `Weather of ${data.name}`;
+        //city
         city.innerHTML = data.name;
 
         // Temperature
@@ -69,6 +79,7 @@ buttonSearchCity.addEventListener("click", (e) => {
 //Use my current position optional
 const getLocation = document.getElementById("buttonLocation");
 getLocation.addEventListener("click", (e) => {
+  resetSearch();
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
       (position) => {
