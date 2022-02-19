@@ -1,11 +1,11 @@
 const inputCity = document.getElementById("inputField");
 const buttonSearchCity = document.getElementById("button");
 
-var city = document.getElementById("cityoutput");
-var temp = document.getElementById("temp");
-var LocationIcon = document.getElementById("icon");
+let city = document.getElementById("cityoutput");
+let temp = document.getElementById("temp");
+let LocationIcon = document.getElementById("icon");
 let iconWeather = document.getElementById("icon");
-var wind = document.getElementById("wind");
+let wind = document.getElementById("wind");
 let clouds = document.getElementById("clouds");
 let sunRise = document.getElementById("sunrise");
 let sunSet = document.getElementById("sunset");
@@ -23,15 +23,19 @@ function resetSearch() {
 
 buttonSearchCity.addEventListener("click", () => {
   let inputVal = document.getElementById("message");
-  inputVal.innerHTML = inputCity.value;
+  inputVal = inputCity.value;
   resetSearch();
   if (inputCity.value == "") {
     inputVal.innerHTML = "Please search for a valid city";
+  } else if (inputVal.value === undefined) {
+    //console.log("greska");
+    alert("Please search for a valid city");
+    inputCity.value = "";
   } else {
     inputVal.innerHTML = "";
     inputCity.value = "";
     fetch(
-      "https://api.openweathermap.org/data/2.5/weather?q=copenhagen&appid=e64c5025eb778680cc166c7ba9b42654"
+      `https://api.openweathermap.org/data/2.5/weather?q=${inputVal}&appid=e64c5025eb778680cc166c7ba9b42654`
     )
       .then((response) => response.json())
       .then((data) => {
