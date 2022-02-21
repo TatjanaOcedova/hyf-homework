@@ -25,7 +25,8 @@ body {
   text-align: center;
 }
 .displayInfo #cityoutput,
-.displayInfo #message {
+.displayInfo #message,
+.displayInfo #messageLatLon {
   font-size: 30px;
   margin: 20px;
 }

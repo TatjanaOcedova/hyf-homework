@@ -11,6 +11,7 @@
     <div class="displayInfo">
       <p id="todaysRep">Today's Weather Report</p>
       <p id="message"></p>
+      <p id="messageLatLon"></p>
       <p id="cityoutput"></p>
       <div class="displayTempIcon">
         <p id="temp"></p>
@@ -21,6 +22,8 @@
         <p id="clouds"></p>
         <p id="sunrise"></p>
         <p id="sunset"></p>
+        <!--The div element for the map -->
+        <!-- <div id="map"></div> -->
       </div>
 
       <!-- try many time how to display the map but without success -->
@@ -32,7 +35,11 @@
       <button id="buttonLocation" type="button">Current Position</button>
       <button id="saveLocal">Save Location</button>
     </div>
-
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <!-- <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1Eo4mPj_4AbpG7uD70tNgYbr-_ivbrek&callback=initMap&libraries=&v=weekly"
+      async
+    ></script> -->
     <script src="main.js"></script>
   </body>
 </html>

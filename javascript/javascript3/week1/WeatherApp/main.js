@@ -11,6 +11,8 @@ let sunRise = document.getElementById("sunrise");
 let sunSet = document.getElementById("sunset");
 let map = document.getElementById("map");
 
+let showLocation = document.getElementById("messageLatLon");
+
 function resetSearch() {
   city.innerHTML = "";
   temp.innerHTML = "";
@@ -19,6 +21,7 @@ function resetSearch() {
   clouds.innerHTML = "";
   sunRise.innerHTML = "";
   sunSet.innerHTML = "";
+  showLocation.innerHTML = "";
 }
 
 buttonSearchCity.addEventListener("click", () => {
@@ -27,15 +30,16 @@ buttonSearchCity.addEventListener("click", () => {
   resetSearch();
   if (inputCity.value == "") {
     inputVal.innerHTML = "Please search for a valid city";
-  } else if (inputVal.value === undefined) {
-    //console.log("greska");
-    alert("Please search for a valid city");
+  } else if (inputVal === undefined) {
+    console.log("inputVal");
+    //alert("Please search for a valid city");
     inputCity.value = "";
   } else {
     inputVal.innerHTML = "";
     inputCity.value = "";
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${inputVal}&appid=e64c5025eb778680cc166c7ba9b42654`
+      `https://api.openweathermap.org/data/2.5/weather?q=${inputVal}&appid=641b137004a6b95d9bb05ff9ee6080f8
+      `
     )
       .then((response) => response.json())
       .then((data) => {
@@ -76,6 +80,22 @@ buttonSearchCity.addEventListener("click", () => {
         //let seconds = set.getSeconds();
         sunSet.innerHTML = `Sunset ${setHours}:${setMinutes}`;
         // Optional a map showing where the city is located
+
+        // // Initialize and add the map
+        // function initMap() {
+        //   // The location of Uluru
+        //   const uluru = { lat: -25.344, lng: 131.036 };
+        //   // The map, centered at Uluru
+        //   const map = new google.maps.Map(document.getElementById("map"), {
+        //     zoom: 4,
+        //     center: uluru,
+        //   });
+        //   // The marker, positioned at Uluru
+        //   const marker = new google.maps.Marker({
+        //     position: uluru,
+        //     map: map,
+        //   });
+        // }
       });
   }
 });
@@ -89,11 +109,11 @@ getLocation.addEventListener("click", (e) => {
       (position) => {
         let latit = position.coords.latitude;
         let longi = position.coords.longitude;
-        let showLocation = document.getElementById("message");
+        //let showLocation = document.getElementById("messageLatLon");
         showLocation.innerHTML =
           "Latitude: " + latit + "<br />" + "Longitude: " + longi;
         fetch(
-          `https://api.openweathermap.org/data/2.5/onecall?lat=${latit}&lon=${longi}&appid=e64c5025eb778680cc166c7ba9b42654`
+          `https://api.openweathermap.org/data/2.5/onecall?lat=${latit}&lon=${longi}&appid=641b137004a6b95d9bb05ff9ee6080f8`
         )
           .then((response) => response.json())
           .then((data) => {
