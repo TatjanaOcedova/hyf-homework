@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.input {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 40px 40px;
+}
+.input p {
+  font-family: "Kalam", cursive;
+  font-size: 50px;
+  text-align: center;
+}
+.input input {
+  border-radius: 5px;
+  margin: 20px 0;
+  border: 0;
+  padding: 10px;
+  box-shadow: 0 6px 15px 2px rgb(206, 201, 201);
+}
+.input button {
+  padding: 20px;
+  border: 0;
+  background-color: #e500a4;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px 2px rgb(206, 201, 201);
+}
+.input button:hover {
+  background-color: #ff67d4;
+  color: black;
+  transform: scale(1.1);
+}
+.display {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  align-content: space-between;
+}
+.display div {
+  margin: 20px;
+  background: url("https://cdn.pixabay.com/photo/2016/08/12/14/42/watercolor-1588805_1280.jpg");
+}
+.display img {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+img[src=""] {
+  display: none;
+}
