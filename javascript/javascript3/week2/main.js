@@ -11,3 +11,13 @@ fetch(
     console.log(badMovies);
     console.log(newBadMovies);
   });
+
+//Promise that resolves after set time
+myPromise(8).then(() => {
+  console.log("I am called asynchronously"); // logged out after 8 seconds
+});
+
+function myPromise(resolveAfter) {
+  const setTime = resolveAfter * 1000;
+  return new Promise((resolve) => setTimeout(resolve, setTime));
+}
