@@ -21,3 +21,42 @@ function myPromise(resolveAfter) {
   const setTime = resolveAfter * 1000;
   return new Promise((resolve) => setTimeout(resolve, setTime));
 }
+
+//Rewrite time
+setTimeoutPromise(3000).then(() => {
+  console.log("Called after 3 seconds");
+});
+
+getCurrentLocation()
+  .then((position) => {
+    // called when the users position is found
+    console.log(position);
+  })
+  .catch((error) => {
+    // called if there was an error getting the users location
+    console.log(error);
+  });
+
+function getCurrentLocation() {
+  return new Promise(function (resolve, reject) {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+        position = { latitude, longitude };
+        resolve(position);
+      });
+    } else {
+      reject;
+    }
+  });
+}
+
+function setTimeoutPromise(msec) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve();
+      console.log("After 3 seconds");
+    }, msec);
+  });
+}
