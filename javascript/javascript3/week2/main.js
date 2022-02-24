@@ -60,3 +60,39 @@ function setTimeoutPromise(msec) {
     }, msec);
   });
 }
+
+//Fetching and waiting
+
+// Promise.resolve()
+//   .then(function () {
+//     return fetch(
+//       "http://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1"
+//     );
+//   })
+//   .then(function (result) {
+//     setTimeout(() => {
+//       console.log(result);
+//       return result.json;
+//     }, 3000);
+//   })
+//   .then(function (data) {
+//     // console.log(data);
+//     return Promise.resolve();
+//   })
+//   .catch(console.log.bind(console));
+
+async function deckOfCard() {
+  try {
+    const response = await fetch(
+      "http://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1"
+    );
+    console.log(response);
+    const cards = await response.json();
+    return cards;
+  } catch (error) {
+    console.log(error);
+  }
+}
+setTimeout(() => {
+  deckOfCard();
+}, 3000);
