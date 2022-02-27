@@ -50,6 +50,6 @@ function translateAllAtOnce() {
     .then(() => {
       console.log("All circles are moved");
     })
-    .catch((error) => console.error(err));
+    .catch((error) => console.error(error));
 }
 translateAllAtOnce();
