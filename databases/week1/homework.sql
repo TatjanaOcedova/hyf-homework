@@ -4,13 +4,13 @@ FROM
 task;
 
 -- 1.Find out how many tasks are in the task table
-SELECT COUNT(id)
+SELECT COUNT(task.id)
     id
 FROM
     task;
 
 -- 2.Find out how many tasks in the task table do not have a valid due date
-SELECT COUNT(id)
+SELECT COUNT(task.id)
     id
 FROM
     task
@@ -27,7 +27,7 @@ JOIN
 ON
     task.status_id = status.id
 WHERE 
-    name LIKE "Done";
+    status.name = "Done";
 
 -- 4.Find all the tasks that are not marked as done
 SELECT
@@ -41,7 +41,7 @@ FROM
 JOIN
     status
 ON task.status_id = status.id
-WHERE name LIKE "Not started" OR name LIKE "In progres";
+WHERE status.name = "Not started" OR status.name = "In progres";
 
 -- 5.Get all the tasks, sorted with the most recently created first
 SELECT
@@ -69,7 +69,7 @@ WHERE
 
 -- 8.Get the title and status (as text) of all tasks
 SELECT
-    title, name
+    task.title, status.name
 FROM
     task
 JOIN
@@ -78,26 +78,26 @@ ON task.status_id = status.id;
 
 -- 9.Get the name of each status, along with a count of how many tasks have that status
 SELECT 
-    name,
-    COUNT(title)
+    status.name,
+    COUNT(task.title) 
 FROM
     status
 JOIN
     task
 ON status.id = task.status_id
 GROUP BY
-    name;
+    status.name;
 
 -- 10.Get the names of all statuses, sorted by the status with most tasks first
 SELECT
-    name,
-    COUNT(title)
+    status.name,
+    COUNT(task.title)
 FROM
     status
 JOIN
     task
 ON status.id = task.status_id
 GROUP BY 
-    name
+    status.name
 ORDER BY
-    COUNT(title) DESC;
+    COUNT(task.title) DESC;
