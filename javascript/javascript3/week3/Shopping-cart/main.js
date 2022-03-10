@@ -27,19 +27,25 @@ class ShoppingCart {
       this.products.splice(findIndex, 1);
       //   product--; //will remove every matching item
     }
+    return findIndex;
   }
 
   searchProduct(productName) {
     // Implement functionality here
     // should return an array of product that match the productName parameter
     // let productName = [];
-
-    const indexSearchProducts = this.products.indexOf(productName);
-    let searchProducts = [];
-    if (indexSearchProducts > -1) {
-      searchProducts.push(this.products[indexSearchProducts]);
-    }
-    return searchProducts;
+    let searchedProducts = {};
+    this.products.forEach((product) => {
+      if (product.name === productName) {
+        searchedProducts = product;
+      }
+    });
+    // const indexSearchProducts = this.products.indexOf(productName);
+    // let searchProducts = [];
+    // if (indexSearchProducts > -1) {
+    //   searchProducts.push(this.products[indexSearchProducts]);
+    // }
+    return searchedProducts;
   }
 
   getTotal() {
@@ -96,11 +102,10 @@ const camera = new Product("camera", 1500);
 shoppingCart.addProduct(camera);
 
 console.log(shoppingCart.products);
-console.log(shoppingCart.searchProduct(mobile));
-// console.log(shoppingCart.removeProduct(camera));
+console.log(shoppingCart.searchProduct("camera"));
+console.log(shoppingCart.removeProduct(camera));
 
 shoppingCart.removeProduct(mobile);
-//shoppingCart.searchProduct(mobile);
 shoppingCart.getTotal();
 shoppingCart.renderProducts();
 shoppingCart.getUser();
