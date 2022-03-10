@@ -7,6 +7,9 @@
 // // ctx.fillStyle = "blue";
 // ctx.fill();
 
+const canvas = document.getElementById("canvas1");
+const ctx = canvas.getContext("2d");
+
 class Circle {
   constructor(x, y, r, startAngle, endAngle, fillColor) {
     this.x = x;
@@ -17,8 +20,6 @@ class Circle {
     this.fillColor = fillColor;
   }
   draw() {
-    const canvas = document.getElementById("canvas1");
-    const ctx = canvas.getContext("2d");
     const x = this.x;
     const y = this.y;
     const radius = this.r;
@@ -29,47 +30,48 @@ class Circle {
     ctx.fill();
   }
 }
-const c1 = new Circle(50, 50, 20, 0, 2 * Math.PI, "#000000");
-c1.draw();
-const c2 = new Circle(300, 300, 150, 20, 10 * Math.PI, "blue");
-c2.draw();
+// const c1 = new Circle(50, 50, 20, 0, 2 * Math.PI, "#000000");
+// c1.draw();
+// const c2 = new Circle(300, 300, 150, 20, 10 * Math.PI, "blue");
+// c2.draw();
+
+// to show random circles
+function randomCircles() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  const x = Math.ceil(Math.random() * canvas.width);
+  const y = Math.ceil(Math.random() * canvas.height);
+  const r = Math.ceil(Math.random() * 150);
+  const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+  const c3 = new Circle(x, y, r, 0, 2 * Math.PI, randomColor);
+  c3.draw();
+}
+// setInterval(randomCircles, 100);
 
 //Follow the mouse
-
-let myCircle = document.getElementById("canvas2");
-const onMouseMove = (e) => {
-  myCircle.style.left = e.pageX + "px";
-  myCircle.style.top = e.pageY + "px";
-  setInterval(() => {
-    let makeMove = new NewCircle();
-    makeMove.draw();
-  }, 100); //they move too quick
-};
-document.addEventListener("mousemove", onMouseMove);
-class NewCircle extends Circle {
-  draw() {
-    const canvas = document.getElementById("canvas2");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    const ctx = canvas.getContext("2d");
-    const x = Math.ceil(Math.random() * canvas.width);
-    const y = Math.ceil(Math.random() * canvas.height);
-    const radius = Math.ceil(Math.random() * 150);
-    ctx.beginPath();
-    ctx.arc(x, y, radius, 0, 2 * Math.PI);
-    ctx.stroke();
-    ctx.fillStyle = "#" + Math.floor(Math.random() * 16777215).toString(16);
-    ctx.fill();
-  }
+document.addEventListener("mousemove", mouseMove);
+function mouseMove(e) {
+  mouseXCoord = e.clientX;
+  mouseYCoord = e.clientY;
 }
+
+let mouseXCoord = 0;
+let mouseYCoord = 0;
+
+function onMouseMove() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  const x = mouseXCoord;
+  const y = mouseYCoord;
+  const r = Math.ceil(Math.random() * 150);
+  const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+  const c4 = new Circle(x, y, r, 0, 2 * Math.PI, randomColor);
+  c4.draw();
+}
+setInterval(onMouseMove, 100);
 
 window.addEventListener("resize", () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
   makeMove.draw();
 });
-
-// setTimeout(() => {
-//   let makeMove = new NewCircle();
-//   makeMove.draw();
-// }, 1000);
