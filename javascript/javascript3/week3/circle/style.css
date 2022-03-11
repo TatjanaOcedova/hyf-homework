@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+  padding: 0;
+  /* overflow: hidden;
+  background-color: #77dd77; */
+}
+#canvas2 {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  height: 500px;
+  width: 500px;
+  border-radius: 50%;
+}
