@@ -1,0 +1,18 @@
+[
+    {
+        "id" : 1,
+        "title" : "Indian food in the summer",
+        "maxNumberOfGuests" : 5,
+        "description" : "A nice night out eating delicious indian food",
+        "createdAt" : "2019/12/7 14:34",
+        "price" : 67
+    },
+    {
+        "id" : 2,
+        "title" : "Stir fry",
+        "maxNumberOfGuests" : 10,
+        "description" : "A nice lunch eating delicious seasonal vegetables with noodles",
+        "createdAt" : "2022/03/31 14:48",
+        "price" : 90
+    }
+]
