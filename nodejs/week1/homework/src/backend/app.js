@@ -18,7 +18,9 @@ app.get("/meals", async (request, response) => {
 
 const mealsWithReviews = meals.map((meal) => {
   meal.reviews = [];
-  reviews.filter((review) => {
+  reviews.forEach(element => {
+    
+  });((review) => {
     if (meal.id === review.mealId) {
       meal.reviews.push(review);
     }
