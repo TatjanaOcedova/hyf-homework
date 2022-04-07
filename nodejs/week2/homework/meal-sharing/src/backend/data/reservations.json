@@ -1,0 +1,38 @@
+[
+    {
+      "id": 1,
+      "name": "Benjamin Hughes",
+      "email": "benjamin@hughes.dk",
+      "mealId": 1
+    },
+    {
+      "id": 2,
+      "name": "Tatjana Ocedova",
+      "email": "tatjana@mail",
+      "mealId": 2
+    },
+    {
+        "id": 3,
+        "name": "Jovance Ilievski",
+        "email": "jovance@mail",
+        "mealId": 3
+      },
+      {
+        "id": 4,
+        "name": "Milena Tanevski",
+        "email": "tanevski@mail",
+        "mealId": 4
+      },
+      {
+        "id": 5,
+        "name": "Dimitar Ocedov",
+        "email": "ocedov@mail",
+        "mealId": 5
+      },
+      {
+        "id": 6,
+        "name": "Bruno Mars",
+        "email": "bruno@mail",
+        "mealId": 6
+      }
+  ]
