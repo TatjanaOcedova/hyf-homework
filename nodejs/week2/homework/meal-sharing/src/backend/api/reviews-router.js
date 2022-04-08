@@ -15,12 +15,18 @@ router.get("/", async (request, response) => {
 
 
 router.get("/:id", async(request, response) => {
-  const reviewsId = Number(request.params.id);
-  const getId = reviews.filter(item => item.id === reviewsId);
-  if(getId.length > 0) {
-    response.send(getId)
-  }else
-  response.send("There is no review with the requested id")
+  const reviewId = Number(request.params.id);
+  if (!Number.isInteger(reviewId)) {
+    response.status(400).json("There is no review with the requested id")
+  }else{
+    let newReview = {}
+    reviews.find(item => {
+      if(item.id === reviewId) {
+      newReview = item
+    }
+  })
+    return response.send(newReview)
+  }
 });
 
 module.exports = router;
