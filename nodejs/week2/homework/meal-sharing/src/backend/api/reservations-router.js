@@ -13,15 +13,6 @@ router.get("/", async (request, response) => {
   }
 });
 
-// router.get("/:id", async(request, response) => {
-//   const reservationId = Number(request.params.id);
-//   const getId = reservations.filter(item => item.id === reservationId);
-//   if(getId.length > 0) {
-//     response.send(getId)
-//   }else
-//   response.send("There is no reservations with the requested id")
-// });
-
 router.get("/:id", async(request, response) => {
   const reservationId = Number(request.params.id);
   if (!Number.isInteger(reservationId)) {
@@ -37,9 +28,6 @@ router.get("/:id", async(request, response) => {
   }
 });
 
-// router.get("/:id", async(request, response) => {
-//   response.send({ data: reservations[(request.params.id -1)]})
-// });
 
 
 module.exports = router;
