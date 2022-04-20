@@ -15,18 +15,19 @@ router.get("/", async (request, response) => {
 
 router.get("/:id", async(request, response) => {
   const reservationId = Number(request.params.id);
-  if (!Number.isInteger(reservationId)) {
-    response.status(400).json("There is no reservation with the requested id")
-  }else{
-    let newReservation = {}
-    reservations.find(item => {
-      if(item.id === reservationId) {
-      newReservation = item
+  if(!isNaN(reservationId)) {
+    let newReservation = reservations.find(item => item.id === reservationId)
+    if(newReservation) {
+      response.send(newReservation)
+    }else{
+      response.status(200).json("There is no reservation with the requested id!")
     }
-  })
-    return response.send(newReservation)
+  }else{
+    response.status(400).json("Please write valid id!")
+  
   }
 });
+
 
 
 

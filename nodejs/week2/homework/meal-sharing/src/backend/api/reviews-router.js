@@ -16,17 +16,19 @@ router.get("/", async (request, response) => {
 
 router.get("/:id", async(request, response) => {
   const reviewId = Number(request.params.id);
-  if (!Number.isInteger(reviewId)) {
-    response.status(400).json("There is no review with the requested id")
-  }else{
-    let newReview = {}
-    reviews.find(item => {
-      if(item.id === reviewId) {
-      newReview = item
+  if(!isNaN(reviewId)) {
+    let newReview = reviews.find(item => item.id === reviewId)
+    if(newReview) {
+      response.send(newReview)
+    }else{
+      response.status(200).json("There is no review with the requested id!")
     }
-  })
-    return response.send(newReview)
+  }else{
+    response.status(400).json("Please write valid id!")
+  
   }
 });
+
+
 
 module.exports = router;
