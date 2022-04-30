@@ -1,0 +1,45 @@
+[
+    {
+      "id": 1,
+      "numberOfStars": 3,
+      "content": "Best meal ever",
+      "mealId": 1,
+      "createdAt": 12345
+    },
+    {
+      "id": 2,
+      "numberOfStars": 4,
+      "content": "Always great",
+      "mealId": 2,
+      "createdAt": 54321
+    },
+    {
+        "id": 3,
+        "numberOfStars": 6,
+        "content": "Awesome",
+        "mealId": 3,
+        "createdAt": 53421
+      },
+      {
+        "id": 4,
+        "numberOfStars": 4,
+        "content": "Very good",
+        "mealId": 4,
+        "createdAt": 54312
+      },
+      {
+        "id": 5,
+        "numberOfStars": 4,
+        "content": "Soo good",
+        "mealId": 5,
+        "createdAt": 54231
+      },
+      {
+        "id": 6,
+        "numberOfStars": 4,
+        "content": "Always fun",
+        "mealId": 6,
+        "createdAt": 54367
+      }
+  ]
+  

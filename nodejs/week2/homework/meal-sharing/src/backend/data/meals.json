@@ -1,0 +1,50 @@
+[
+    {
+        "id" : 1,
+        "title" : "Indian food in the summer",
+        "maxNumberOfGuests" : 5,
+        "description" : "A nice night out eating delicious indian food",
+        "createdAt" : "2019/12/7 14:34",
+        "price" : 67
+    },
+    {
+        "id" : 2,
+        "title" : "Stir fry",
+        "maxNumberOfGuests" : 10,
+        "description" : "A nice lunch eating delicious seasonal vegetables with noodles",
+        "createdAt" : "2022/03/31 14:48",
+        "price" : 90
+    },
+    {
+        "id": 3,
+        "title": "Bombay burritos",
+        "maxNumberOfGuests" : 20,
+        "description": "Curry mashed potatoes, chickpeas, cauliflower, spinach and pickled onions wrap in a tortilla",
+        "createdAt": "2022-03-23", 
+        "price": 150
+    },
+    {
+        "id": 4,
+        "title": "Ratatouille",
+        "maxNumberOfGuests" : 15,
+        "description": "Roasted veggies over creamy polenta",
+        "createdAt": "2022-03-23", 
+        "price": 110
+    },
+    {
+        "id": 5,
+        "title": "Vegan carbonara",
+        "maxNumberOfGuests" : 20,
+        "description": "Pasta with cashew butter and mushrooms",
+        "createdAt": "2022-03-23", 
+        "price": 120
+    },
+    {
+        "id": 6,
+        "title": "Sarma",
+        "maxNumberOfGuests" : 15,
+        "description": "Cabbage roll with rice and veggies",
+        "createdAt": "2022-03-23", 
+        "price": 95
+    }
+]
