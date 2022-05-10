@@ -1,7 +1,7 @@
-function TodoTitle(props) {
+function TodoTitle() {
   return (
     <div>
-      <h1>{props.title}</h1>
+      <h1>Todo List</h1>
     </div>
   );
 }
