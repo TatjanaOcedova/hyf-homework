@@ -1,33 +1,33 @@
 import React, { useState } from "react";
 import { TodoItem } from "./TodoItem";
-import todos from "./todos";
+import todoData from "./todos";
 import "../App.css";
 
 export function TodoList() {
-  const [useTodo, setUseTodo] = useState(todos);
+  const [todos, setTodos] = useState(todoData);
 
   const addRandomTodo = () => {
-    const myNextTodoItem = "random things";
-    const newTodo = {
-      id: useTodo.length + 1,
-      description: myNextTodoItem,
-      done: false,
-    };
-    setUseTodo((prevTodos) => {
+    setTodos((prevTodos) => {
+      const newTodo = {
+        id: prevTodos[prevTodos.length - 1].id + 1,
+        description: "random things",
+        done: false,
+      };
+
       return [...prevTodos, newTodo];
     });
   };
 
   const strikeTodo = (id) => {
-    var strikeList = [...useTodo];
+    var strikeList = [...todos];
     strikeList.forEach((item) => {
       if (item.id === id) {
         item.checked = !item.checked;
       }
     });
-    setUseTodo(strikeList);
+    setTodos(strikeList);
   };
-  const TodoItems = useTodo.map((todo) => (
+  const TodoItems = todos.map((todo) => (
     <TodoItem
       text={todo.description}
       checked={todo.checked}
@@ -39,7 +39,7 @@ export function TodoList() {
   ));
 
   function deleteTodo(id) {
-    return setUseTodo((prevTodos) => {
+    return setTodos((prevTodos) => {
       let dataItems = prevTodos.filter((item) => item.id !== id);
       return dataItems;
     });
