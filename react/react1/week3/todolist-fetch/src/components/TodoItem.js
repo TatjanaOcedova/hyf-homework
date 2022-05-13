@@ -1,50 +1,59 @@
 import React, { useState } from "react";
+import "../App.css";
+import FancyBorder from "./FancyBorder";
 
-export function TodoItem({
-  description,
-  deadline,
-  checked,
-  id,
-  deleteTodo,
-  strikeTodo,
-  editTodo,
-}) {
-  const [editstate, setEditstate] = useState(false);
-  const [updatestate, setUpdatestate] = useState("");
+export function TodoItem({ description, deadline, id, deleteTodo, editTodo }) {
+  const [checked, setChecked] = useState("unchecked");
+  const [editTodoItem, setEditTodoItem] = useState(false);
+  const [updateTodoItem, setUpdateTodo] = useState("");
+
+  const strikeThrough = () => {
+    setChecked((box) => {
+      if (box === "unchecked") {
+        return "checked";
+      } else {
+        return "unchecked";
+      }
+    });
+  };
 
   const toCallDelete = () => {
     deleteTodo(id);
   };
   const toCallEdit = () => {
-    setEditstate(true);
-    setUpdatestate(description);
+    setEditTodoItem(true);
+    setUpdateTodo(description);
   };
   function updateDesc(e) {
     const value = e.target.value;
-    setUpdatestate(value);
+    setUpdateTodo(value);
   }
   function infoUpdation() {
-    setEditstate(false);
-    editTodo(id, updatestate);
+    setEditTodoItem(false);
+    editTodo(id, updateTodoItem);
   }
 
   return (
-    <li className="lineThrough">
-      {editstate ? (
-        <input type="text" value={updatestate} onChange={updateDesc} />
-      ) : (
-        <span className={checked ? "checked" : "unchecked"}>
-          {description} {deadline}
-        </span>
-      )}
+    <div className="border-design">
+      <FancyBorder>
+        <label htmlFor="strike" className={checked}>
+          {editTodoItem ? (
+            <input type="text" value={updateTodoItem} onChange={updateDesc} />
+          ) : (
+            description
+          )}
+          {" | "}
+          {deadline}
+        </label>
 
-      <input type="checkbox" value={checked} onChange={() => strikeTodo(id)} />
-      <button onClick={toCallDelete}> Delete </button>
-      {editstate ? (
-        <button onClick={infoUpdation}> Update </button>
-      ) : (
-        <button onClick={toCallEdit}> Edit </button>
-      )}
-    </li>
+        <input id="strike" type="checkbox" onChange={strikeThrough} />
+        <button onClick={toCallDelete}> Delete </button>
+        {editTodoItem ? (
+          <button onClick={infoUpdation}> Update </button>
+        ) : (
+          <button onClick={toCallEdit}> Edit </button>
+        )}
+      </FancyBorder>
+    </div>
   );
 }
