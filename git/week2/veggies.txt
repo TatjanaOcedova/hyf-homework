@@ -1,5 +1,7 @@
 Broccoli
 Tomato
-Potatos
+Potato
 Beetroot
 Carrot
+Avocado
+Cabbage
